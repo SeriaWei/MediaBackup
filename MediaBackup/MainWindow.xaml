@@ -1,0 +1,27 @@
+﻿<Window x:Class="MediaBackup.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MediaBackup"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="710">
+    <Grid>
+        <Label Content="相册" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="备份到" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top"/>
+        <TextBox Margin="73,14,90,0" TextWrapping="NoWrap" Text="" Name="TextBox_SourcePath" VerticalAlignment="Top"/>
+        <TextBox Margin="73,44,90,0" TextWrapping="NoWrap" Text="" Name="TextBox_BackupPath" VerticalAlignment="Top"/>
+        <Button Content="浏览..." Margin="0,13,35,0" VerticalAlignment="Top" Name="Button_SourcePath" Click="Button_SourcePath_Click" HorizontalAlignment="Right" Width="37"/>
+        <Button Content="浏览..." Margin="0,43,35,0" VerticalAlignment="Top" Name="Button_BackupPath" Click="Button_BackupPath_Click" HorizontalAlignment="Right" Width="37"/>
+        <Button Content="开始" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="155" Name="Button_Start" Click="Button_Start_Click" />
+        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,81,10,43" Name="ListView_SyncItems">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=FilePath}"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Action}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>
